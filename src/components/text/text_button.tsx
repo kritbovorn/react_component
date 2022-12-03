@@ -1,7 +1,7 @@
 import React from "react";
 import { GestureResponderEvent, Text ,TextStyle,TouchableHighlight,View} from 'react-native';
 import SizeConfig from "../../utils/size_config";
-import Colors from '../../styles/colors';
+import { colors } from '../../utils/colors'
 
 interface Props {
     title: string;
@@ -15,7 +15,7 @@ interface Props {
 const   TextButton: React.FC<Props> = ({title, color, fontFamily, fontweight, onpressed}) => {
   return (  
     <TouchableHighlight onPress={() => onpressed()}>
-         <Text style= {{color: color ?? Colors.dark, fontSize: SizeConfig.title, fontWeight: fontweight ?? 'bold', fontFamily: fontFamily}}>{title}</Text>
+         <Text style= {{color: color ?? colors.dark, fontSize: SizeConfig.title, fontWeight: fontweight ?? 'bold', fontFamily: fontFamily}}>{title}</Text>
     </TouchableHighlight>
   );
 }

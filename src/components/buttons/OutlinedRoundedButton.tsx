@@ -5,9 +5,9 @@ import {
   View,
   TouchableHighlight
 } from 'react-native';
-import SizeConfig from '../../size_config/size_config';
+import SizeConfig from '../../utils/size_config';
 
-import Colors from 'styles/colors';
+import { colors } from '../../utils/colors';
 
 interface Props {
   caption: string;
@@ -19,7 +19,7 @@ const OutlinedRoundedButton: React.FC<Props> = ({caption, onPress}) => {
     <TouchableHighlight
       style={styles.button}
       onPress={() => onPress()}
-      underlayColor={Colors.secondaryLight}>
+      underlayColor={colors.primaryBlue}>
         <Text style={[styles.text, {fontSize: SizeConfig.title}]}>{caption}</Text>
     </TouchableHighlight>
   );
@@ -30,11 +30,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     borderRadius: SizeConfig.midBorder,
-    borderColor: Colors.secondary,
+    borderColor: colors.secondary,
     borderWidth: SizeConfig.minBorder
   },
   text: {
-    color: Colors.secondary,
+    color: colors.secondary,
     fontWeight: 'bold',
     textAlign: 'center',
   }

@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, TextStyle, StyleSheet } from 'react-native';
-import Colors from '../../styles/colors'
+import { colors } from '../../utils/colors'
 import SizeConfig from "../../utils/size_config";
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 
 const TextBody: React.FC<Props> = ({ title, color, fontweight, fontFamily }) => {
     return (
-        <Text style={{ fontSize: SizeConfig.body, color: color ?? Colors.dark, fontWeight: fontweight ?? 'normal', fontFamily: fontFamily }}>{title}</Text>
+        <Text style={{ fontSize: SizeConfig.body, color: color ?? colors.dark, fontWeight: fontweight ?? 'normal', fontFamily: fontFamily }}>{title}</Text>
     );
 }
 

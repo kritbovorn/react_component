@@ -1,4 +1,6 @@
 export const colors = {
+    dark: "black",
+    white: "white",
     background: "#DCDCDC",
     primaryBackground: "#E8E8E8",
     secondaryBackground: "#BEBEBE",

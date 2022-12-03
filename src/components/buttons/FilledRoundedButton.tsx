@@ -1,4 +1,3 @@
-import TextTitle from 'components/text/text_title';
 import React from 'react';
 import {
   StyleSheet,
@@ -7,7 +6,7 @@ import {
   TouchableHighlight
 } from 'react-native';
 
-import Colors from 'styles/colors';
+import { colors } from '../../utils/colors';
 import SizeConfig from '../../utils/size_config';
 
 interface Props {
@@ -20,7 +19,7 @@ const FilledRoundedButton: React.FC<Props> = ({ caption, onPress }) => {
     <TouchableHighlight
       style={[styles.button]}
       onPress={() => onPress()}
-      underlayColor={Colors.secondaryLight}>
+      underlayColor={colors.background}>
       <Text style={[styles.text, { fontSize: SizeConfig.title, }]}>{caption}</Text>
     </TouchableHighlight>
   );
@@ -29,12 +28,12 @@ const FilledRoundedButton: React.FC<Props> = ({ caption, onPress }) => {
 const styles = StyleSheet.create({
   button: {
     flex: 1,
-    backgroundColor: Colors.secondary,
+    backgroundColor: colors.secondary,
     borderRadius: SizeConfig.midBorder,
     justifyContent: 'center'
   },
   text: {
-    color: Colors.light,
+    color: colors.primary,
     fontWeight: 'bold',
     textAlign: 'center',
   }

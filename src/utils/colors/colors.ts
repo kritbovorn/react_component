@@ -1,6 +1,6 @@
 export const colors = {
-    dark: "black",
-    white: "white",
+    dark: "#050505",
+    white: "#FBFBFB",
     background: "#DCDCDC",
     primaryBackground: "#E8E8E8",
     secondaryBackground: "#BEBEBE",
@@ -9,7 +9,14 @@ export const colors = {
     primaryBlue: "#A17DE6",
     secondaryBlue: " #83A0D5",
     thirdBlue: "#8FC3D0",
-    border: "#EDEDED"
+    border: "#EDEDED",
+
+    backgroundNavbar: '#E5553A',
+    backgroundPrimary: '#FAFAFA',
+    backgroundSection: '#F2F2F2',
+
 
    
 }
+
+export default colors;

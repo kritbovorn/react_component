@@ -11,12 +11,12 @@ type Props = {
     onPressOutline(): void
 }
 
-const ButtonTwinComponent = ({ titleFilled, titleOutline, onPressFilled, onPressOutline }: Props) => {
+const ButtonTwinComponent = ({titleFilled, titleOutline, onPressFilled, onPressOutline}: Props) => {
     return (
         <View style={[{ flexDirection: 'row', height: sc.buttonHeight, paddingHorizontal: sc.maxPad }]}>
 
-            <OutlineButtonComponent title={titleOutline ?? "ย้อนกลับ"} onPress={() => onPressOutline()} width={'95%'} alignItems={'flex-start'} />
-            <FilledButtonComponent title={titleFilled ?? "ต่อไป"} onPress={() => onPressFilled()} width={'95%'} alignItems={'flex-end'} />
+            <OutlineButtonComponent title= {titleOutline ?? "ย้อนกลับ"} onPress={() => onPressOutline()} width={'95%'} style={{alignSelf: 'flex-start'}} />
+            <FilledButtonComponent title={titleFilled ?? "ต่อไป"} onPress={() => onPressFilled()} width={'95%'} style={{alignSelf: 'flex-end'}} />
 
         </View>
     );

@@ -14,23 +14,34 @@ class SizeConfig {
     static readonly head1 = this.screenHeight * 0.02486;   // 18
     static readonly head = this.screenHeight * 0.0221;  // 16
     static readonly body = this.screenHeight * 0.01933;   // 14
-    static readonly title = this.screenHeight * 0.01657 ;   //  12
+    static readonly title = this.screenHeight * 0.01657;   //  12
     static readonly subtitle = this.screenHeight * 0.01381;  // 10
     static readonly caption = this.screenHeight * 0.0110;   // 8
 
-    static readonly minPad = this.screenWidth * 0.025;
-    static readonly midPad = this.screenWidth * 0.035;
-    static readonly maxPad = this.screenWidth * 0.045;
-    
+    static readonly padMin = this.screenWidth * 0.025;
+    static readonly padMid = this.screenWidth * 0.035;
+    static readonly padMax = this.screenWidth * 0.045;
+
     static readonly minSpace = this.screenHeight * 0.0025;
     static readonly midSpace = this.screenHeight * 0.005;
-    static readonly maxSpace = this.screenHeight * 0.01;
+
+    static readonly spaceCaption = this.screenHeight * 0.0110;
+    static readonly spaceSubtitle = this.screenHeight * 0.01381;
+    static readonly spaceTitle = this.screenHeight * 0.01657;
+    static readonly spaceBody = this.screenHeight * 0.01933;
+    static readonly spaceHead = this.screenHeight * 0.0221;
+    static readonly spaceHead1 = this.screenHeight * 0.02486;
+    static readonly spaceHead2 = this.screenHeight * 0.02762;
+    static readonly spaceHead3 = this.screenHeight * 0.03038;
+    static readonly spaceHead4 = this.screenHeight * 0.03315;
+    static readonly spaceHead5 = this.screenHeight * 0.0359;
+
 
 
 
     // Card List :  84 / 724
     static readonly cardListHeight = this.screenHeight * 0.116022;
-    
+
 
 
     // Navigation Bar : 55 / 724
@@ -38,7 +49,7 @@ class SizeConfig {
 
     // Sub head : 46 / 724
     static readonly breadcrumbHeight = this.screenHeight * 0.063535;
-    
+
     // Head content Height : 80 / 724
     static readonly headStepperHeight = this.screenHeight * 0.110497;
     // Head Section Height : 65 / 724
@@ -52,8 +63,8 @@ class SizeConfig {
     // Footer Space Height : 30 / 724
     static readonly footerSpaceHeight = this.screenHeight * 0.04143;
 
-    // Button Height : 47 / 724
-    static readonly buttonHeight = this.screenHeight * 0.06491;
+    // Button Height : 46 / 724
+    static readonly buttonHeight = this.screenHeight * 0.063535;
 
     // CheckBox Height : 28 / 724
     static readonly checkboxHeight = this.screenHeight * 0.03867;
@@ -66,8 +77,8 @@ class SizeConfig {
 
 
 
-    
-    
+
+
 
 
 }

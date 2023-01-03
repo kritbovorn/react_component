@@ -24,6 +24,7 @@ class SizeConfig {
 
     static readonly minSpace = this.screenHeight * 0.0025;
     static readonly midSpace = this.screenHeight * 0.005;
+    static readonly maxSpace = this.screenHeight * 0.01;
 
     static readonly spaceCaption = this.screenHeight * 0.0110;
     static readonly spaceSubtitle = this.screenHeight * 0.01381;

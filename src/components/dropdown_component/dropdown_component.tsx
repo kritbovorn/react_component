@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import { ScrollView, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
-import { Fruit } from "../../screens/home_screen";
+import { UserState } from "../../redux_toolkit/features/users/user_slice";
 import { CaretDown } from "../../utils/import/import_icons";
 import { gbs, sc } from "../../utils/import/import_options";
-import Spacer from "../spacer/spacer";
+import SpacerBody from "../spacer/spacer_body";
 
 type DropDownProps = {
-    datas: Fruit[],
+    datas: UserState[],
+    sendUserId(userId: string): void
 }
 
-const DropdownComponent = ({ datas }: DropDownProps) => {
+const DropdownComponent = ({ datas, sendUserId }: DropDownProps) => {
 
     const [isShow, setIsShow] = useState(false);
     const [title, setTitle] = useState('');
-    const onSelectedItem = (fruit: string) => {
+    const onSelectedItem = (item: UserState) => {
         setIsShow(false);
-        setTitle(fruit);
+        setTitle(item.name);
+        sendUserId(item.id);
     }
     return (
         <View style={[{ alignItems: 'stretch', width: '100%' }]} >
@@ -37,13 +39,13 @@ const DropdownComponent = ({ datas }: DropDownProps) => {
                     />
                 </View>
             </TouchableHighlight>
-            <Spacer />
+            <SpacerBody />
             {isShow
                 ? <View style={[styles.dropdown, {maxHeight: sc.cardListHeight * 2.2}]}>
                     <ScrollView >
                     {datas.map((item, index) =>
-                        <TouchableHighlight key={index} underlayColor={'rgba(0, 0, 0, 0.1)'} onPress={() => onSelectedItem(item.name)} >
-                            <Text key={index} style={[styles.textDropDown, gbs.body, {backgroundColor: item.name === title ? 'aqua' : 'darkseagreen'}]}>{`${item.name}`}</Text>
+                        <TouchableHighlight key={item.id} underlayColor={'rgba(0, 0, 0, 0.1)'} onPress={() => onSelectedItem(item)} >
+                            <Text key={item.id} style={[styles.textDropDown, gbs.body, {backgroundColor: item.name === title ? 'aqua' : 'darkseagreen'}]}>{`${item.name}`}</Text>
                         </TouchableHighlight>
                     )}
                     </ScrollView>
@@ -64,19 +66,19 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         position: 'absolute',
         zIndex: 20,
-        marginTop: sc.midPad + sc.buttonHeight,
+        marginTop: sc.padMid + sc.buttonHeight,
         overflow: 'hidden',
         borderRadius: sc.maxSpace,
         backgroundColor: 'white',
     },
     textTouch: {
         backgroundColor: 'rgba(0, 0, 0, 0.6)',
-        padding: sc.maxPad,
+        padding: sc.padMax,
     },
     textDropDown: {
         color: 'darkgreen',
         // backgroundColor: 'darkseagreen',
-        padding: sc.maxPad,
+        padding: sc.padMax,
         fontWeight: '500',
         marginBottom: sc.minSpace
     }

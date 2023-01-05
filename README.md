@@ -22,6 +22,30 @@ npm install @types/react-redux @reduxjs/toolkit
 
 ---  
 
+## Use Google Fonts  
+
+- [Download Google Fonts](https://fonts.google.com/)  
+- import at : project-directory/assets/fonts  
+- Creat file : `react-native.config.js`  
+- Paste this  
+
+```ts  
+
+module.exports = {
+  project: {
+    ios: {},
+    android: {}
+  },
+  assets: ['./assets/fonts/']
+}
+
+```  
+
+- Run command : `npx react-native-asset`  
+- Restart App...  
+
+---  
+
 ## install Linear Gradient  
 
 ```  

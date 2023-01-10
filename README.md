@@ -56,29 +56,7 @@ then `npx pod-install ios`
 then `Restart App`  
 
 ---  
-## Install Google Fonts  
 
-- Download Font: https://fonts.google.com/  
-- import at : project-directory/assets/fonts  
-- Creat file : `react-native.config.js`  
-- Paste this  
-
-```ts  
-
-module.exports = {
-  project: {
-    ios: {},
-    android: {}
-  },
-  assets: ['./assets/fonts/']
-}
-
-```  
-
-- Run command : `npx react-native-asset`  
-- Restart App...  
-
----  
 
 
 ## Usage : SVG  
@@ -162,5 +140,7 @@ Edit your `.svgrrc` file and include a line for `replaceAttrValues` that matchin
 ```
 
 ---  
+
+
 
 

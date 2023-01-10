@@ -1,4 +1,7 @@
 export const colors = {
+
+    colorAuth: "#72106E",
+    
     dark: "#050505",
     white: "#FBFBFB",
     background: "#DCDCDC",
@@ -10,6 +13,9 @@ export const colors = {
     secondaryBlue: " #83A0D5",
     thirdBlue: "#8FC3D0",
     border: "#EDEDED",
+
+    backgroundAuth: '#934790',
+    backgroundAuthButton: '#D987D1',
 
     backgroundNavbar: '#E5553A',
     backgroundPrimary: '#FAFAFA',

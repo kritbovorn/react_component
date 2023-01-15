@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
-import { CheckIcon, gbs, sc } from "../../utils/import/import_options";
+import { CheckIcon } from "../../utils/import/import_icons";
+import {  gbs, sc } from "../../utils/import/import_options";
 
 type Props = {
     title: string,
@@ -29,12 +30,12 @@ const styles = StyleSheet.create({
         height: sc.checkboxHeight,
         flexDirection: 'row',
         alignItems: 'center',
-        marginHorizontal: sc.maxPad
+        marginHorizontal: sc.padMax
     },
     checkbox: {
         height: '100%',
         aspectRatio: 1,
         borderRadius: sc.midSpace,
-        marginRight: sc.midPad,
+        marginRight: sc.padMid,
     }
 });

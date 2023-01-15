@@ -1,6 +1,5 @@
 import React from "react";
 import { Alert, Share } from "react-native";
-import { InstanceOf } from "reselect/es/types";
 
 const helpers = {
     shareMessage: async (content: string) => {

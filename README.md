@@ -1,5 +1,22 @@
 # Component for React Native : TypeScript  
 
+## Fake Image  
+
+```ts  
+
+<View style={[{ height: "70%", aspectRatio: 1 }]}>
+  <ImageBackground
+    style={{ height: "100%", aspectRatio: 1, borderRadius: sc.cardListHeight, overflow: 'hidden' }}
+    source={{ uri: 'https://reactjs.org/logo-og.png' }}
+    resizeMode={"cover"}
+  />
+</View>
+
+```  
+
+---  
+
+
 ## Install SVN package  
 ```js
 brew install svn
@@ -62,6 +79,32 @@ Should have : `fontWeight: "normal"` for some fonts cannot display
 
 
 ---  
+
+## React Native Firebase  
+
+- Podfile  
+
+```ts 
+
+target '--- Project Name ---' do
+  config = use_native_modules!
+
+  # Flags change depending on the env values.
+  flags = get_default_flags()
+
+  pod 'Firebase', :modular_headers => true    //  $$$ Add  this 
+  pod 'FirebaseCore', :modular_headers => true    //  $$$ Add  this 
+  pod 'GoogleUtilities', :modular_headers => true   //  $$$ Add  this 
+  
+
+  use_react_native!(
+
+  )
+
+```  
+
+---  
+
 
 ## install Linear Gradient  
 
@@ -381,6 +424,27 @@ import 'react-native-gesture-handler';
 npx pod-install ios  
 ```  
 
+## ⛏️ Issue  
+
+`Make sure reanimated's babel plugin is installed in your babel.config.js (you should have 'react-native-reanimated/plugin' listed there - also see the above link for details)`  
+
+In : `babel.config.js`  
+
+```ts  
+
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: [
+    'react-native-reanimated/plugin',     // $$$  Add this
+  ]
+};
+
+
+```  
+
+---  
+
+
 - [Example Drawer](https://reactnavigation.org/docs/drawer-navigator/#api-definition)  
 
 ```ts  
@@ -417,7 +481,77 @@ navigation.dispatch(DrawerActions.toggleDrawer());
 
 ---  
 ---  
+---   
+
+## Async Storage() 
+> Store Data local  
+
+🔗 🔗 🔗 [Install and Usage](https://react-native-async-storage.github.io/async-storage/docs/install/)  
+
+```ts  
+
+npm install @react-native-async-storage/async-storage
+
+```  
+
+On iOS  
+
+```ts  
+
+npx pod-install ios
+
+```  
+
+
+- Example  
+
+```ts  
+
+import React, { useState, useEffect } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
+
+export default function App() {
+  const [value, setValue] = useState('value');
+  const { getItem, setItem } = useAsyncStorage('@storage_key');
+
+  const readItemFromStorage = async () => {
+    const item = await getItem();
+    setValue(item);
+  };
+
+  const writeItemToStorage = async newValue => {
+    await setItem(newValue);
+    setValue(newValue);
+  };
+
+  useEffect(() => {
+    readItemFromStorage();
+  }, []);
+
+  return (
+    <View style={{ margin: 40 }}>
+      <Text>Current value: {value}</Text>
+      <TouchableOpacity
+        onPress={() =>
+          writeItemToStorage(
+            Math.random()
+              .toString(36)
+              .substr(2, 5)
+          )
+        }
+      >
+        <Text>Update value</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+```  
+
 ---  
+
+
 
 
 
